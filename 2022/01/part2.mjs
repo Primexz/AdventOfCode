@@ -1,7 +1,6 @@
 import fs from "fs";
 
 let data = fs.readFileSync("input.txt", "utf-8");
-
 data = data
   .split("\n\n")
   .map((elv) => elv.split("\n").map((calory) => parseInt(calory, 10)));
@@ -11,10 +10,7 @@ const out = data.reduce((acc, curr) => {
   return acc;
 }, []);
 
-console.log("highest calory: ", Math.max(...out));
-
 console.log(
-  "top 3: ",
   out
     .sort((a, b) => a - b)
     .reverse()
